@@ -1,16 +1,15 @@
 require 'colorize'
-
 class FileReader
-  attr_reader :errors_message, :files_lines, :file_path, :file_lines_count
-  def initialize(files)
-    @error_message = ''
-    @files = files
+  attr_reader :err_msg, :file_lines, :file_path, :file_lines_count
+  def initialize(file_path)
+    @err_msg = ''
+    @file_path = file_path
     begin
-      @file_lines = File.readlines(@files)
+      @file_lines = File.readlines(@file_path)
       @file_lines_count = @file_lines.size
     rescue StandardError => e
       @file_lines = []
-      @errors_message = 'Please check file name or path\n'.colorize(:light_green) + exception.to_s.colorize(:red)
+      @err_msg = "Check file name or path again\n".colorize(:light_red) + e.to_s.colorize(:red)
     end
   end
 end
