@@ -2,6 +2,8 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
+    - './new.rb'
+    - './corrected_method.rb'
 
   DisplayCopNames: true
 

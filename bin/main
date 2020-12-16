@@ -12,6 +12,6 @@ else
   lint.errors.uniq.each do |err|
     puts "#{lint.checks.file_path.colorize(:white)} : #{err.colorize(:red)}"
   end
-  end
+end
 
 puts lint.checks.err_msg if lint.checks.file_lines.empty?

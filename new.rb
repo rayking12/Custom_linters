@@ -1,12 +1,12 @@
 class Testing_Error
-    def school(name)   
-   @name = @name]
-           @school = @school
+  def school(_name)
+    @name = @name
+        @school = @school
+  end
+
+  def test_method(_error)
+test.each do |i|
+          puts i
     end
-  
-    def test_method(error)
-      test.each_with_index do |i|
-        puts i
-      end
-    end
+          end
 end
