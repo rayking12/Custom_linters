@@ -77,4 +77,4 @@ $ gem install colorize
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues and feature requests are welcome! Thank You!
