@@ -3,7 +3,7 @@
 
 # About 
 
-this custom linter deals with the idea of checking one's code and looking fo errors, As a develeopr, Errors are bound in one's code, it handles that for the developer and makes sure the developer has minimal or no errors in his code
+this custom linter deals with the idea of checking one's code and looking for errors, As a develeopr, Errors are bound in one's code, it handles that for the developer and makes sure the developer has minimal or no errors in the code.
 
 # The Build
 The custom Ruby linter  checks for the following errors/warnings.
@@ -14,6 +14,95 @@ The custom Ruby linter  checks for the following errors/warnings.
 ## Built With
 - Ruby
 - RSpec for Ruby Testing
+
+> These are examples of good and bad codes. The good practises of code and the bad practises are shown below.
+
+## Indentation Error Check
+~~~ruby
+# Good Code
+
+class Testing_Error
+  def school(name)
+    @name = @name     
+    @school = @school
+  end
+end
+
+# Bad Code
+
+class Testing_Error
+  def school(name)
+            @name = @name     
+        @school = @school
+
+  end
+~~~
+
+## Trailing spaces
+~~~ruby
+# Good Code
+
+class Testing_Error
+  def school(name) 
+    @name = @name     
+    @school = @school
+  end
+end
+
+# Bad Code
+
+class Testing_Error
+  def school(name) ~
+    @name = @name     
+    @school = @school
+  end
+end
+
+
+
+## Missing/unexpected end
+~~~ruby
+# Good Code
+
+class Testing_Error
+  def school(name) 
+    @name = @name     
+    @school = @school
+  end
+end
+
+# Bad Code
+
+class Testing_Error
+  def school(name) 
+    @name = @name     
+    @school = @school
+  end
+end
+end
+~~~
+
+## Empty line error
+~~~ruby
+# Good Code
+
+class Testing_Error
+  def school(name) 
+    @name = @name     
+    @school = @school
+  end
+end
+
+# Bad Code
+
+class Testing_Error
+  def school(name) 
+  
+    @name = @name     
+    @school = @school
+  end
+end
+~~~
 
 
 # Getting Started
@@ -42,7 +131,7 @@ $ bin/main new.rb
  ## Testing
 
 To test the code, run `rspec` from root of the folder using terminal.
-Note: `new.rb` it has been excluded from the rubocop test
+Note: `new.rb`&& `corrected_method` has been excluded from the rubocop test
 
 > Rspec is used for the test, to install the gem file, run
 
