@@ -20,13 +20,13 @@ describe Error do
   describe '#check_indentation' do
     context 'when indentaton space is not correctly spaced'
     it 'should return indentation space error on line 3' do
-      checks.check_line
-      expect(checks.errors[0]).to eql('line:3 Indentation Error: Use 2 spaces for indentation.')
+      checks.check_indentation
+      expect(checks.errors[0]).to eql('line:10 Indentation Error: Use 2 spaces for indentation.')
     end
 
     context 'when indentaton space is correctly spaced'
     it 'should not return indentation space error on line 3' do
-      checks.check_line
+      checks.check_indentation
       expect(checks.errors[0]).to_not eql('line:2 Indentation Error: Use 2 spaces for indentation.')
     end
   end
