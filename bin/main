@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require_relative '../lib/check_error.rb'
+
+lint = Error.new(ARGV.first)
+lint.trailing_spaces
+lint.check_indentation
+lint.empty_line_error
+
+if lint.errors.empty? && lint.checks.err_msg.empty?
+  puts 'Great Job :'.colorize(:green) + ' No Offence detected'.colorize(:green)
+else
+  lint.errors.uniq.each do |err|
+    puts "#{lint.checks.file_path.colorize(:white)} : #{err.colorize(:red)}"
+  end
+end
+
+puts lint.checks.err_msg if lint.checks.file_lines.empty?
